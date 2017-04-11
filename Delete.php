@@ -12,7 +12,7 @@
    $connect -> query("set names utf8");
    $strSQL = "DELETE FROM Notes ";
    $strSQL .="WHERE id = '".$_GET["id"]."' ";
-   $objQuery = $conn->query($strSQL);
+   $objQuery = $connect->query($strSQL);
    if($objQuery){
       echo "<br><center>Delete Complete";
       echo "<meta http-equiv='refresh'content='1;URL=index.php'>";

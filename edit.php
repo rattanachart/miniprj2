@@ -1,3 +1,14 @@
+<html>
+<head>
+<title>Edit Notes</title>
+</head>
+ <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
+<body>
 <?php
    $host = "localhost";
    $userName = "it58160024";
@@ -9,13 +20,22 @@
         $id = $_GET["id"];
    }
    $sql = "SELECT * FROM Notes WHERE id = '".$id."' ";
-   $result = $conn->query($sql);
+   $result = $connect->query($sql);
 ?>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Edit Notes</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+<script>
+    $(document).ready(function(){ 
+            $("#page_view").on("swipeleft",function(event){  
+              $.mobile.changePage( "index.php", { transition: "slide"} ); });
+        });
+    </script>
 </head>
 <body>
 <?php while($row = $result->fetch_object()) { ?> 
@@ -36,7 +56,7 @@
     </td></tr>
         </div>
              <script>
-    function fncSubmit() {
+function fncSubmit() {
   if(document.form1.topic.value == "" || document.form1.information.value == "") {
     alert('กรุณาป้อนข้อมูลให้เรียบร้อย');
     document.form1.topic.focus(),document.form1.information.focus();

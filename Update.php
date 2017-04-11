@@ -11,18 +11,18 @@
 	$userPassword = "it58160024";
 	$db = "it58160024";
 	$connect = mysqli_connect($host,$userName,$userPassword,$db);
-	$connect -> query("set names utf8");
+	$connect->query("set names utf8");
 	$sql = "UPDATE Notes SET 
 			topic = '".addslashes($_POST["topic"])."' ,
 			information = '".addslashes($_POST["information"])."' 
 			WHERE id = '".$_POST["id"]."' ";
 
-	$query = mysqli_query($conn,$sql);
+	$query = mysqli_query($connect,$sql);
 	if($query) {
 	 echo "<br><center>Update successfully";
 	 echo "<meta http-equiv='refresh'content='1;URL=index.php'>";
 	}
-	mysqli_close($conn);
+	mysqli_close($connect);
 ?>
 </body>
 </html>
