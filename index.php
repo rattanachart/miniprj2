@@ -33,15 +33,17 @@ div.
 
             <?php 
         $sql = "SELECT * FROM Notes WHERE date ='".$row->date. "' ORDER BY id DESC "; 
-        $conn -> query("set names utf8"); 
+        $connect -> query("set names utf8"); 
         $result2 = $conn->query($sql);
         while($row = $result2->fetch_object()) {
         ?> 
 
-             <li><a href ="Note.php?id=<?php echo $row->id ?>" ><h2><?php echo $row->topic ?></h2><p><?php echo"<br>"?><?php echo $row->information?></p> </a>
-        <a href="Edit.php?id=<?php echo $row->id ?>"></a>
-        </li>
-                   <?php } ?>
+       <li><a href ="Main.php?id=<?php echo $row->id ?>" >
+       <h2><?php echo $row->topic ?></h2><p><?php echo"<br>"?>
+       <?php echo $row->information?></p> </a>
+       <a href="edit.php?id=<?php echo $row->id ?>"></a>
+       </li>
+       <?php } ?>
                 
          </ul>
     </div><!-- /content -->
