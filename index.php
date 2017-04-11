@@ -14,8 +14,8 @@ div.
     $username ="it58160024";
     $password ="it58160024";
     $database = "it58160024";
-    $conn = mysqli_connect($host,$username,$password,$database);
-    $conn -> query("set names utf8"); 
+    $connect = mysqli_connect($host,$username,$password,$database);
+    $connect -> query("set names utf8"); 
     echo ' <div data-role="header" >
         <h1>My Notes</h1>
         <a href="NewNote.php"  class="ui-btn-right" >+</a>
@@ -26,11 +26,11 @@ div.
 
     while($row = $result->fetch_object()){ 
       ?>
-
  <div data-role="content">
         <ul data-role="listview" data-ajax="false" data-inset="true" data-theme="d">
-            <li data-role="list-divider"><center><?php echo $row->date ?></center></li>
-
+            <li data-role="list-divider">
+            <center><?php echo $row->date ?></center>
+            </li>
             <?php 
         $sql = "SELECT * FROM Notes WHERE date ='".$row->date. "' ORDER BY id DESC "; 
         $connect -> query("set names utf8"); 
@@ -41,10 +41,9 @@ div.
        <li><a href ="Main.php?id=<?php echo $row->id ?>" >
        <h2><?php echo $row->topic ?></h2><p><?php echo"<br>"?>
        <?php echo $row->information?></p> </a>
-       <a href="edit.php?id=<?php echo $row->id ?>"></a>
+       <a href="Edit.php?id=<?php echo $row->id ?>"></a>
        </li>
-       <?php } ?>
-                
+       <?php } ?>               
          </ul>
     </div><!-- /content -->
     <?php } ?>     

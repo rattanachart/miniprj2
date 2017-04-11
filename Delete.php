@@ -6,7 +6,7 @@
 <?php
    $host = "localhost";
    $userName = "it58160024";
-   $userPassword = "it558160024";
+   $userPassword = "it58160024";
    $db = "it58160024";
    $connect = mysqli_connect($host,$userName,$userPassword,$db);
    $connect -> query("set names utf8");

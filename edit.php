@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
    $host = "localhost";
    $userName = "it58160024";
@@ -34,7 +33,7 @@
     <?php } ?>
             <input type="submit" id="btn_editNote" name="edit" data-role="button" value="Edit" >
             <a href="index.php" style="text-decoration: none;"><input class="btn btn-warning" type=button value="Cancel"></a>
-</td></tr>
+    </td></tr>
         </div>
              <script>
     function fncSubmit() {
